@@ -1,3 +1,12 @@
+setup:
+	python -m venv .venv/
+	mkdir data/
+	mkdir data/raw/
+	mkdir data/interim/
+	mkdir data/processed/
+	pip install -r requirements.txt
+	echo "Remember to add kaggle.json file to the project folder"
+
 fetch:
 	python src/dataset/fetch_from_kaggle.py
 
