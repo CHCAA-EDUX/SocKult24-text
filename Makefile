@@ -8,6 +8,7 @@ setup:
 	pip install -r requirements.txt
 	python -m spacy download en_core_web_sm
 	echo "Remember to add kaggle.json file to the project folder"
+	bash move_kaggle_credentials.sh
 
 fetch:
 	python src/dataset/fetch_from_kaggle.py

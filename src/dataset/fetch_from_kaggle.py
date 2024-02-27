@@ -1,19 +1,8 @@
 """
 """
 
-import os
-import json
 from kaggle.api.kaggle_api_extended import KaggleApi
 
-
-# import credentials
-with open("kaggle.json") as f:
-    kaggle_keys = json.load(f)
-
-# TODO authentication doesn't work
-    # could try to solve with .env
-os.environ["KAGGLE_USERNAME"] = kaggle_keys["username"]
-os.environ["KAGGLE_KEY"] = kaggle_keys["key"]
 
 api = KaggleApi()
 api.authenticate()
