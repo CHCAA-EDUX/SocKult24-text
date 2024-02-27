@@ -1,9 +1,10 @@
 setup:
-	python -m venv .venv/
 	mkdir data/
 	mkdir data/raw/
 	mkdir data/interim/
 	mkdir data/processed/
+	python -m venv .venv/
+	source .venv/bin/activate
 	pip install -r requirements.txt
 	echo "Remember to add kaggle.json file to the project folder"
 
