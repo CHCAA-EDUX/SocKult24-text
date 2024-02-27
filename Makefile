@@ -1,3 +1,6 @@
+fetch:
+	python src/dataset/fetch_from_kaggle.py
+
 dataset:
 	python src/dataset/create_subset.py
 	python src/dataset/generate_descriptives.py
