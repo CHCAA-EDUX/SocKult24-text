@@ -1,5 +1,4 @@
 datasets
-pandas
-matplotlib
 textdescriptives
 spacy
+kaggle
