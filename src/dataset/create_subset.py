@@ -31,7 +31,7 @@ ap.add_argument("-t", "--testrun", action="store_true")
 args = ap.parse_args()
 
 # load datasets
-ka = datasets.Dataset.from_csv("data/raw/kaggle-song-lyrics/song_lyrics.csv")
+ka = datasets.Dataset.from_csv("data/raw/song_lyrics.csv")
 
 if args.testrun:
     ka = ka.select(list(range(100)))
