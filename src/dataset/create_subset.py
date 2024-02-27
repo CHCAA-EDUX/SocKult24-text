@@ -20,12 +20,21 @@ Source:
     https://www.kaggle.com/datasets/carlosgdcj/genius-song-lyrics-with-language-information?resource=download
 """
 
+import argparse
 import numpy as np
 import datasets
 
 
+# initialize option to make a test run
+ap = argparse.ArgumentParser()
+ap.add_argument("-t", "--testrun", action="store_true")
+args = ap.parse_args()
+
 # load datasets
 ka = datasets.Dataset.from_csv("data/raw/kaggle-song-lyrics/song_lyrics.csv")
+
+if args.testrun:
+    ka = ka.select(list(range(100)))
 
 # filter out
 ka = (

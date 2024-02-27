@@ -136,6 +136,11 @@ def preprocess(ds: datasets.Dataset, n_process: int, test_run: bool = False):
 
 
 if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-t", "--testrun", action="store_true")
+    args = ap.parse_args()
+
     ds = datasets.load_from_disk("data/interim/rap_lyrics")
-    ds = preprocess(ds=ds, n_process=4, test_run=True)
+    ds = preprocess(ds=ds, n_process=4, test_run=args.testrun)
     ds.save_to_disk("data/processed/rap_lyrics_nmf")
